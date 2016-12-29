@@ -211,7 +211,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rs.cs" />
-    <Compile Include="UserPrivileges.cs" />
     <Compile Include="WaitingConnection.cs">
       <SubType>Form</SubType>
     </Compile>
