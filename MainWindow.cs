@@ -21,7 +21,7 @@ namespace MySqlClientDotNET {
             if (!System.IO.File.Exists(ResourcesPath.ini_file))
                 MySqlConfig.createINIFile(); //create ini if don't exist
 
-            MySqlConfig.settINIFile();
+            MySqlConfig.settINIFile();//add comment
             if (MySqlConfig.GetAppConfig("language").Equals("id"))
                 LanguageApp.initializeLangId();
             else
