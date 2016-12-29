@@ -1,0 +1,53 @@
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\MySqlClientDotNET.exe
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\MySqlClientDotNET.pdb
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\FastColoredTextBox.dll
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\MySql.Data.dll
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\MySqlBackup.dll
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\FastColoredTextBox.pdb
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\FastColoredTextBox.xml
+D:\Skripsi\Program\MySqlClientDotNET\bin\Debug\MySqlBackup.pdb
+D:\Skripsi\Program\MySqlClientDotNET\obj\x86\Debug\MySqlClientDotNET.csprojResolveAssemblyReference.cache
+D:\Skripsi\Program\MySqlClientDotNET\obj\x86\Debug\MySqlClientDotNET.MainWindow.resources
+D:\Skripsi\Program\MySqlClientDotNET\obj\x86\Debug\MySqlClientDotNET.Properties.Resources.resources
+D:\Skripsi\Program\MySqlClientDotNET\obj\x86\Debug\MySqlClientDotNET.csproj.GenerateResource.Cache
+D:\Skripsi\Program\MySqlClientDotNET\obj\x86\Debug\MySqlClientDotNET.exe
+D:\Skripsi\Program\MySqlClientDotNET\obj\x86\Debug\MySqlClientDotNET.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySqlClientDotNET.exe
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySqlClientDotNET.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\FastColoredTextBox.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\INIFileParser.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySql.Data.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySqlBackup.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\System.Data.SQLite.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\FastColoredTextBox.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\FastColoredTextBox.xml
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\INIFileParser.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySql.Data.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySqlBackup.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\System.Data.SQLite.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\System.Data.SQLite.xml
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.FormAbout.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.ConsoleSQL_NS.ConsoleSQL.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.ConsoleSQL_NS.ConsoleText.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.DatabaseBuilder.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.DynamicTabNS.DynamicTabs.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.ExportImortSQL.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.FormHowToRenameDB.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.FormSetting.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.ResultGridNS.FormExportCSV.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.ResultGridNS.FormImportCSV.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.FormSelectCol.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.ResultGridNS.ResultGrid.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.SQLPerview.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.StartingPage.FormInputPassword.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.StartingPage.FormNewConnection.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.StartingPage.StartPage.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.TableBuilder.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.UserAccount.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.MainWindow.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.Properties.Resources.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.WaitingConnection.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.csproj.GenerateResource.Cache
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.exe
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySqlBackup\bin\Release\MySqlBackup.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySqlBackup\bin\Release\MySqlBackup.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySqlBackup\bin\Release\MySql.Data.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySqlBackup\obj\Release\MySqlBackup.csprojResolveAssemblyReference.cache
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySqlBackup\obj\Release\MySqlBackup.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySqlBackup\obj\Release\MySqlBackup.pdb

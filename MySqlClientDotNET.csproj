@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D7A77287-D7EB-46F7-9A70-F7E39E507BF7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MySqlClientDotNET</RootNamespace>
+    <AssemblyName>MySqlClientDotNET</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MySQL_Client_DOT_NET_-_LOGO.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\SQLite\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppConnection.cs" />
+    <Compile Include="DesignControls\ConsoleSQL_NS\ConsoleSQL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\ConsoleSQL_NS\ConsoleSQL.Designer.cs">
+      <DependentUpon>ConsoleSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\ConsoleSQL_NS\ConsoleText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DesignControls\DatabaseBuilder\DatabaseBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\DatabaseBuilder\DatabaseBuilder.designer.cs">
+      <DependentUpon>DatabaseBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\ExecutingMessage.cs" />
+    <Compile Include="DesignControls\ExportImport\ExportImortSQL.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\ExportImport\ExportImortSQL.designer.cs">
+      <DependentUpon>ExportImortSQL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\DatabaseBuilder\FormHowToRenameDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\DatabaseBuilder\FormHowToRenameDB.Designer.cs">
+      <DependentUpon>FormHowToRenameDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\FormSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\FormSetting.Designer.cs">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\EditRow.cs" />
+    <Compile Include="DesignControls\ResultGridNS\FormExportCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\FormExportCSV.Designer.cs">
+      <DependentUpon>FormExportCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\FormImportCSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\FormImportCSV.Designer.cs">
+      <DependentUpon>FormImportCSV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\FormSelectCol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\FormSelectCol.Designer.cs">
+      <DependentUpon>FormSelectCol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\ResultGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\ResultGridNS\ResultGrid.designer.cs">
+      <DependentUpon>ResultGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\Identify.cs" />
+    <Compile Include="DesignControls\SqlEditorNS\SqlEditorEvent.cs" />
+    <Compile Include="DesignControls\SQLMessageNS\SQLMessage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\SQLPerview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\SQLPerview.Designer.cs">
+      <DependentUpon>SQLPerview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\StartPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\StartPage\FormInputPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\StartPage\FormInputPassword.Designer.cs">
+      <DependentUpon>FormInputPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\StartPage\FormNewConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\StartPage\FormNewConnection.designer.cs">
+      <DependentUpon>FormNewConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\StartPage\StartPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\StartPage\StartPage.designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\RefreshTableTreeEventArgs.cs" />
+    <Compile Include="DesignControls\TableBuilder\TableBuilder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\TableBuilder\TableBuilder.designer.cs">
+      <DependentUpon>TableBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\TableBuilder\TableBuilderMode.cs" />
+    <Compile Include="DesignControls\UserAccoountNS\UserAccount.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\UserAccoountNS\UserAccount.designer.cs">
+      <DependentUpon>UserAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileIO\AESEncrypt.cs" />
+    <Compile Include="FileIO\FileInfo.cs" />
+    <Compile Include="FileIO\ReadFromText.cs" />
+    <Compile Include="FileIO\WriteToText.cs" />
+    <Compile Include="DesignControls\About\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignControls\About\FormAbout.designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageApp.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="MySqlConfig.cs" />
+    <Compile Include="DesignControls\DynamicTabNS\DynamicTabEvent.cs" />
+    <Compile Include="DesignControls\DynamicTabNS\DynamicTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DesignControls\DynamicTabNS\DynamicTabs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DesignControls\DynamicTabNS\DynamicTabs.designer.cs">
+      <DependentUpon>DynamicTabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignControls\SimpleMessageBox.cs" />
+    <Compile Include="DesignControls\SqlEditorNS\SqlEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySqlUtil\CheckingSQLSyntax.cs" />
+    <Compile Include="MySqlUtil\CollationStoreInfos.cs" />
+    <Compile Include="MySqlUtil\ColumnStoreInfos.cs" />
+    <Compile Include="MySqlUtil\TableStoreInfos.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rs.cs" />
+    <Compile Include="UserPrivileges.cs" />
+    <Compile Include="WaitingConnection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingConnection.Designer.cs">
+      <DependentUpon>WaitingConnection.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DesignControls\About\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ConsoleSQL_NS\ConsoleSQL.resx">
+      <DependentUpon>ConsoleSQL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ConsoleSQL_NS\ConsoleText.resx">
+      <DependentUpon>ConsoleText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\DatabaseBuilder\DatabaseBuilder.resx">
+      <DependentUpon>DatabaseBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\DynamicTabNS\DynamicTabs.resx">
+      <DependentUpon>DynamicTabs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ExportImport\ExportImortSQL.resx">
+      <DependentUpon>ExportImortSQL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\DatabaseBuilder\FormHowToRenameDB.resx">
+      <DependentUpon>FormHowToRenameDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\FormSetting.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ResultGridNS\FormExportCSV.resx">
+      <DependentUpon>FormExportCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ResultGridNS\FormImportCSV.resx">
+      <DependentUpon>FormImportCSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ResultGridNS\FormSelectCol.resx">
+      <DependentUpon>FormSelectCol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\ResultGridNS\ResultGrid.resx">
+      <DependentUpon>ResultGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\SQLPerview.resx">
+      <DependentUpon>SQLPerview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\StartPage\FormInputPassword.resx">
+      <DependentUpon>FormInputPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\StartPage\FormNewConnection.resx">
+      <DependentUpon>FormNewConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\StartPage\StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\TableBuilder\TableBuilder.resx">
+      <DependentUpon>TableBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignControls\UserAccoountNS\UserAccount.resx">
+      <DependentUpon>UserAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WaitingConnection.resx">
+      <DependentUpon>WaitingConnection.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="FastColoredTextBox\FastColoredTextBox.csproj">
+      <Project>{6DD14A85-CCFC-4774-BD26-0F5772512319}</Project>
+      <Name>FastColoredTextBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="IniFileParser\INIFileParser.csproj">
+      <Project>{5E46DCF4-C473-4171-9F9B-F3910B5EC407}</Project>
+      <Name>INIFileParser</Name>
+    </ProjectReference>
+    <ProjectReference Include="MySql.Data\MySql.Data.csproj">
+      <Project>{e9df5ed1-4cbd-4226-b931-9a51610ac14d}</Project>
+      <Name>MySql.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="MySqlBackup\MySqlBackup.csproj">
+      <Project>{2625A6B7-505A-43F7-9282-24AFE5A3DB64}</Project>
+      <Name>MySqlBackup</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReadFile\db_conn.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DesignControls\temp.txt" />
+    <Content Include="MySQL_Client_DOT_NET_-_LOGO.ico" />
+    <Content Include="setup_script.iss" />
+    <None Include="Resources\ReadFile\refman-5.7-en.pdf" />
+    <None Include="Resources\ReadFile\set_value.ini" />
+    <None Include="Resources\upS.png" />
+    <None Include="Resources\downS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

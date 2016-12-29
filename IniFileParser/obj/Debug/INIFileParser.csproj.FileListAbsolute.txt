@@ -1,0 +1,5 @@
+D:\Skripsi\Program\lib\ini-parser-development\src\IniFileParser\bin\Debug\INIFileParser.dll
+D:\Skripsi\Program\lib\ini-parser-development\src\IniFileParser\bin\Debug\INIFileParser.pdb
+D:\Skripsi\Program\lib\ini-parser-development\src\IniFileParser\obj\Debug\INIFileParser.csprojResolveAssemblyReference.cache
+D:\Skripsi\Program\lib\ini-parser-development\src\IniFileParser\obj\Debug\INIFileParser.dll
+D:\Skripsi\Program\lib\ini-parser-development\src\IniFileParser\obj\Debug\INIFileParser.pdb

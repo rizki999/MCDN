@@ -1,0 +1,10 @@
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\bin\v4.0\Debug\MySql.Data.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\bin\v4.0\Debug\MySql.Data.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\bin\v4.0\Release\MySql.Data.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\bin\v4.0\Release\MySql.Data.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\bin\v4.0\Release\MySql.Data.XML
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\obj\v4.0\MySql.Data.MySqlClient.Properties.Resources.resources
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\obj\v4.0\MySql.Data.csproj.GenerateResource.Cache
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\obj\v4.0\MySql.Data.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\obj\v4.0\MySql.Data.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\MySql.Data\obj\v4.0\MySql.Data.csprojResolveAssemblyReference.cache

@@ -1,0 +1,5 @@
+D:\Skripsi\Program\lib\INIFileParser.xml
+D:\Skripsi\Program\lib\INIFileParser.dll
+D:\Skripsi\Program\lib\INIFileParser.pdb
+D:\Skripsi\Program\MySqlClientDotNET vs10\IniFileParser\obj\Release\INIFileParser.dll
+D:\Skripsi\Program\MySqlClientDotNET vs10\IniFileParser\obj\Release\INIFileParser.pdb
