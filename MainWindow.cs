@@ -19,7 +19,7 @@ namespace MySqlClientDotNET {
     public partial class MainWindow : Form {
         public MainWindow() {
             if (!System.IO.File.Exists(ResourcesPath.ini_file))
-                MySqlConfig.createINIFile();
+                MySqlConfig.createINIFile(); //create ini if don't exist
 
             MySqlConfig.settINIFile();
             if (MySqlConfig.GetAppConfig("language").Equals("id"))
