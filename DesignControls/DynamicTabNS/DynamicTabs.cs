@@ -40,7 +40,7 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
         private List<DynamicTabPage> dynamicTabPage;
         private Font dynamicTabTextHeaderFont;
 
-        public int DynamicTabSelectedIndex {
+        public int DynamicTabSelectedIndex { //aksjknjkajs
             get {
                 return dynamicTabIndex;
             }
