@@ -165,11 +165,14 @@ namespace MySqlClientDotNET.DesignControls.StartingPage {
 FROM 
     tb_data
 WHERE 
-    conn_name='" + conn_name + "';";
+    conn_name=@ConnName;";
+            SQLiteParameter sParam = new SQLiteParameter("@ConnName", DbType.String);
+            sParam.Value = conn_name;
             try {
                 using (scnn = new SQLiteConnection(scnnstr)) {
                     using (scmmd = new SQLiteCommand(sql, scnn)) {
                         scnn.Open();
+                        scmmd.Parameters.Add(sParam);
                         using (sdr = scmmd.ExecuteReader()) {
                             if (sdr.HasRows) {
                                 string pass = string.Empty;
@@ -259,35 +262,52 @@ WHERE
 
             string sql = "";
             string askPass = "";
+            List<SQLiteParameter> lsParam = new List<SQLiteParameter>();
             string pass = textPass.Text.Equals("") ? textPass.Text : simpleAESPass.EncryptToString(textPass.Text);
             if (!checkAskPass.Checked)
                 askPass = textPass.Text.Equals("") ? textPass.Text : simpleAESAskPass.EncryptToString(textPass.Text);
+
+            lsParam.Add(new SQLiteParameter("@ConnName", DbType.String));
+            lsParam.Add(new SQLiteParameter("@Host", DbType.String));
+            lsParam.Add(new SQLiteParameter("@Port", DbType.String));
+            lsParam.Add(new SQLiteParameter("@User", DbType.String));
+            lsParam.Add(new SQLiteParameter("@Pass", DbType.String));
+            lsParam.Add(new SQLiteParameter("@DefDb", DbType.String));
+            lsParam.Add(new SQLiteParameter("@AskPass", DbType.String));
+            lsParam[0].Value = textConnName.Text;
+            lsParam[1].Value = textHost.Text;
+            lsParam[2].Value = textPort.Text;
+            lsParam[3].Value = textUsername.Text;
+            lsParam[4].Value = pass;
+            lsParam[5].Value = textDefaultDB.Text;
+            lsParam[6].Value = askPass;
+            
             if (isCreate) {
                 sql =
 @"INSERT INTO 
     tb_data 
 VALUES(
-    '" + textConnName.Text + @"', 
-    '" + textHost.Text + @"', 
-    '" + textPort.Text + @"', 
-    '" + textUsername.Text + @"', 
-    '" + pass + @"', 
-    '" + textDefaultDB.Text + @"',
-    '" + askPass + @"'
+    @ConnName, 
+    @Host, 
+    @Port, 
+    @User, 
+    @Pass, 
+    @DefDb,
+    @AskPass
 );";
             } else {
                 sql =
 @"UPDATE 
     tb_data 
 SET 
-    server='" + textHost.Text + @"', 
-    port='" + textPort.Text + @"', 
-    usr='" + textUsername.Text + @"', 
-    passwd='" + pass + @"', 
-    def_db='" + textDefaultDB.Text + @"',
-    ask_pass='" + askPass + @"'
+    server=@Host, 
+    port=@Port, 
+    usr=@User, 
+    passwd=@Pass, 
+    def_db=@DefDb,
+    ask_pass=@AskPass 
 WHERE 
-    conn_name='" + textConnName.Text + "';";
+    conn_name=@ConnName;";
             }
 
             try {
@@ -296,6 +316,7 @@ WHERE
                     using (scnn = new SQLiteConnection(scnnstr)) {
                         scnn.Open();
                         using (scmmd = new SQLiteCommand(sql, scnn)) {
+                            scmmd.Parameters.AddRange(lsParam.ToArray());
                             scmmd.ExecuteNonQuery();
                         }
                     }
