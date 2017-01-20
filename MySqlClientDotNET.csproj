@@ -48,7 +48,16 @@
     <DelaySign>true</DelaySign>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FastColoredTextBox">
+      <HintPath>..\lib\UsedLib\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="INIFileParser">
+      <HintPath>..\lib\UsedLib\INIFileParser.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySqlBackup">
+      <HintPath>..\lib\UsedLib\MySqlBackup.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
@@ -302,32 +311,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="FastColoredTextBox\FastColoredTextBox.csproj">
-      <Project>{6DD14A85-CCFC-4774-BD26-0F5772512319}</Project>
-      <Name>FastColoredTextBox</Name>
-    </ProjectReference>
-    <ProjectReference Include="IniFileParser\INIFileParser.csproj">
-      <Project>{5E46DCF4-C473-4171-9F9B-F3910B5EC407}</Project>
-      <Name>INIFileParser</Name>
-    </ProjectReference>
     <ProjectReference Include="MySql.Data\MySql.Data.csproj">
       <Project>{e9df5ed1-4cbd-4226-b931-9a51610ac14d}</Project>
       <Name>MySql.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="MySqlBackup\MySqlBackup.csproj">
-      <Project>{2625A6B7-505A-43F7-9282-24AFE5A3DB64}</Project>
-      <Name>MySqlBackup</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ReadFile\db_conn.db" />
+    <None Include="Resources\ReadFile\set_value.ini" />
+    <None Include="Resources\ReadFileDebug\db_conn.db" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DesignControls\temp.txt" />
     <Content Include="MySQL_Client_DOT_NET_-_LOGO.ico" />
     <Content Include="setup_script.iss" />
-    <None Include="Resources\ReadFile\refman-5.7-en.pdf" />
-    <None Include="Resources\ReadFile\set_value.ini" />
+    <None Include="Resources\ReadFileDebug\set_value.ini" />
     <None Include="Resources\upS.png" />
     <None Include="Resources\downS.png" />
   </ItemGroup>
