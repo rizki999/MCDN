@@ -44,10 +44,10 @@ namespace MySqlClientDotNET {
         }
 
         public static string db_conn {
-            get { return @"..\..\Resources\ReadFile\db_conn.db"; }
+            get { return @"..\..\Resources\ReadFileDebug\db_conn.db"; }
         }
         public static string ini_file {
-            get { return @"..\..\Resources\ReadFile\set_value.ini"; }
+            get { return @"..\..\Resources\ReadFileDebug\set_value.ini"; }
         }
         public static string img_close_S {
             get {

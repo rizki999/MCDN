@@ -23,9 +23,6 @@ namespace MySqlClientDotNET.DesignControls.ResultGridNS {
             } catch { }
 
             this.PageType = TabPageType.GridResult;
-
-            //colMode1 = new List<string>();
-            //colMode2 = new List<string>();
             colCount = 0;
 
             enableSqlLimit = true;
@@ -379,6 +376,11 @@ namespace MySqlClientDotNET.DesignControls.ResultGridNS {
                             str = valueTime.ToString(MySqlConfig.MySqlTimeToDotNetTime());
                         }
                     } catch { }
+                    return str;
+                case MySqlDbType.Byte :
+                    if(!isDbNull)
+                        if (val.GetType() == typeof(System.Boolean))
+                            str = ((System.Boolean)val) ? "1" : "0";
                     return str;
             }
 

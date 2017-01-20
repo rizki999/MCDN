@@ -163,7 +163,8 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             bt.Size = new System.Drawing.Size(bt.Size.Width, 30);
             bt.UseVisualStyleBackColor = true;
             panMain.Controls.Clear();
-            dynamicTabPage[idx].Size = new Size(panMain.Size.Width, panMain.Size.Height);
+            if (dynamicTabPage[idx].Dock == DockStyle.None)
+                dynamicTabPage[idx].Size = new Size(panMain.Size.Width, panMain.Size.Height);
             panMain.Controls.Add(dynamicTabPage[idx]);
             dynamicTabPage[idx].SelectControls();
         }

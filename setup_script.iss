@@ -39,7 +39,6 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Source: ".\bin\Release\MySqlClientDotNET.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\bin\Release\FastColoredTextBox.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\bin\Release\INIFileParser.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\bin\Release\INIFileParser.xml"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\bin\Release\MySql.Data.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\bin\Release\MySqlBackup.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: ".\bin\Release\System.Data.SQLite.dll"; DestDir: "{app}"; Flags: ignoreversion

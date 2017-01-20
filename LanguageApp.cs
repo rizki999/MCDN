@@ -43,7 +43,7 @@ namespace MySqlClientDotNET {
             langMainMenu.Add("SMMDatabaseExplorer", "&Database Explorer");
             langMainMenu.Add("SMMServerIdentity", "&Identity Serever");
             langMainMenu.Add("SMMOutput", "&Output");
-            langMainMenu.Add("SMMHideAllPanle", "&All Panle");
+            langMainMenu.Add("SMMHideAllPanle", "&Haide All Panle");
 
             langMainMenu.Add("SMMCreateDatabase", "Create &Database");
             langMainMenu.Add("SMMCreateTable", "Create &Table");

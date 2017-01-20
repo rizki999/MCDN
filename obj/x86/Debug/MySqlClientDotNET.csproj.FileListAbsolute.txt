@@ -19,11 +19,7 @@ D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\INIFileParser.dll
 D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySql.Data.dll
 D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySqlBackup.dll
 D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\System.Data.SQLite.dll
-D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\FastColoredTextBox.pdb
-D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\FastColoredTextBox.xml
-D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\INIFileParser.pdb
 D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySql.Data.pdb
-D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\MySqlBackup.pdb
 D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\System.Data.SQLite.pdb
 D:\Skripsi\Program\MySqlClientDotNET vs10\bin\Debug\System.Data.SQLite.xml
 D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.DesignControls.FormAbout.resources
@@ -50,4 +46,3 @@ D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.Waitin
 D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.csproj.GenerateResource.Cache
 D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.exe
 D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.pdb
-D:\Skripsi\Program\MySqlClientDotNET vs10\obj\x86\Debug\MySqlClientDotNET.csprojResolveAssemblyReference.cache
