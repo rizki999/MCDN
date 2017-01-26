@@ -96,7 +96,7 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             int i = 0;
             int x = panHTabHeader.PointToClient(Cursor.Position).X;
             for (i = 0; i < panHTabHeader.Controls.Count; ++i) {
-                if (((i * (wtab - 1)) + (wtab - 1)) > x) {
+                if (((i * wtab) + wtab) > x) {
                     return i;
                 }
             }
@@ -133,9 +133,9 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
         private void tabSizeChangd() {
             int endTab = this.Size.Width - panTabHeaderControls.Size.Width;//57;
             int startTab = 0;
-            int cPositionTab = (wtab - 1) * dynamicTabIndex;
-            int middle = lentab / 2;
-            if (lentab < endTab) {
+            int cPositionTab = wtab * dynamicTabIndex;
+            int middle = this.lentab / 2;
+            if (this.lentab < endTab) {
                 panHTabHeader.Location = new System.Drawing.Point(startTab, panHTabHeader.Location.Y);
                 return;
             }
@@ -148,8 +148,8 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
                 return;
             }
 
-            if (((panHTabHeader.Location.X + cPositionTab) + (wtab - 1)) >= endTab) 
-                panHTabHeader.Location = new System.Drawing.Point(endTab - (cPositionTab + (wtab - 1)), panHTabHeader.Location.Y);
+            if (((panHTabHeader.Location.X + cPositionTab) + wtab) >= endTab)
+                panHTabHeader.Location = new System.Drawing.Point(endTab - (cPositionTab + wtab), panHTabHeader.Location.Y);
             if ((panHTabHeader.Location.X + cPositionTab) < startTab) 
                 panHTabHeader.Location = new System.Drawing.Point(startTab - cPositionTab, panHTabHeader.Location.Y);
         }
@@ -229,15 +229,17 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             e.IndexTab = idx;
             e.TabPage = tabPage.PageType;
             OnSelctedTab(e);
-            panHTabHeader.Size = new System.Drawing.Size(panHTabHeader.Size.Width + (wtab - 1),
+            panHTabHeader.Size = new System.Drawing.Size(panHTabHeader.Size.Width + wtab,
                                                          panHTabHeader.Size.Height);
 
             DynamicTabSelectedIndex = idx;
 
             dynamicTabIndex = idx;
-            lentab += wtab - 1;
+            lentab += wtab;
             tabSizeChangd();
 
+            tabPage.InitializedOnDynamicTab();
+            
             if (tabPage.TabHeaderText.Equals("")) {
                 tabPage.TabHeaderText = "[" + LanguageApp.langDynamicTabDoc["THNew"] + " " + tabPage.UniqueId + "]";
                 tabPage.IsEdited = true;
@@ -247,7 +249,7 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             if (!panTabHeaderControls.Visible)
                 panTabHeaderControls.Visible = true;
             tabPage.IsEdited = tabPage.IsEdited;
-            tabPage.InitializedOnDynamicTab();
+            //tabPage.InitializedOnDynamicTab();
         }
 
         void bt_MouseWheel(object sender, MouseEventArgs e) {
@@ -257,6 +259,8 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             int del = 0;
             int endTab = this.Size.Width - panTabHeaderControls.Size.Width;
             int startTab = 0;
+            int lenTabSpace = this.Size.Width - this.toolStrip1.Size.Width;
+
 
             if (panHTabHeader.Size.Width < endTab)
                 return;
@@ -264,7 +268,7 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             if (e.Delta < 0) {
                 res = panHTabHeader.Location.X + panHTabHeader.Size.Width;
                 del = res + delta;
-                resLocation = del < endTab - 4 ? panHTabHeader.Location.X : panHTabHeader.Location.X + delta;
+                resLocation = del < endTab ? panHTabHeader.Location.X : panHTabHeader.Location.X + delta;
             }
 
             if (e.Delta > 0) {
@@ -358,10 +362,10 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             lsbRemoveAt(e.IndexTab);
 
 
-            panHTabHeader.Size = new System.Drawing.Size(panHTabHeader.Size.Width - (wtab - 1),
+            panHTabHeader.Size = new System.Drawing.Size(panHTabHeader.Size.Width - wtab,
                                                          panHTabHeader.Size.Height);
 
-            lentab -= (wtab - 1);
+            lentab -= wtab;
 
             if (e.IndexTab == panHTabHeader.Controls.Count) {
                 dynamicTabIndex = (e.IndexTab > 0) ? e.IndexTab - 1 : -1;
@@ -424,10 +428,10 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
             panMain.Controls.Clear();
             lsbRemoveAt(idx);
 
-            panHTabHeader.Size = new System.Drawing.Size(panHTabHeader.Size.Width - (wtab - 1),
+            panHTabHeader.Size = new System.Drawing.Size(panHTabHeader.Size.Width - wtab,
                                                          panHTabHeader.Size.Height);
 
-            lentab -= (wtab - 1);
+            lentab -= wtab;
 
             if (idx == panHTabHeader.Controls.Count) 
                 dynamicTabIndex = (idx > 0) ? idx - 1 : -1;

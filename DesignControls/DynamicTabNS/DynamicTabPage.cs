@@ -42,30 +42,10 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
         }
 
         public string LoadedFile { get; set; }
-        public bool LockControl {
-            get {
-                return lockControl;
-            }
-            set {
-                lockControl = value;
-                DyanamicTabLockControl dLc = new DyanamicTabLockControl();
-                dLc.LockedControl = value;
-
-                onLoackControl(dLc);
-            }
-        }
 
         private string tabHeaderText;
         private bool isEdited;
-        private bool lockControl;
         public int ForeginId { get; set; }
-
-        protected virtual void onLoackControl(DyanamicTabLockControl e) {
-            EventHandler<DyanamicTabLockControl> handler = LoackingControls;
-            if (handler != null) {
-                handler(this, e);
-            }
-        }
 
         protected virtual void onTabHeadrTextChanged(DynamicTabTextHeaderChangedEventArgs e) {
             EventHandler<DynamicTabTextHeaderChangedEventArgs> handler = TabHeaderTextChanged;
@@ -144,7 +124,6 @@ namespace MySqlClientDotNET.DesignControls.DynamicTabNS {
 
         public event EventHandler<DynamicTabTextHeaderChangedEventArgs> TabHeaderTextChanged;
         public event EventHandler<DynamicTabCloseTabEventArgs> ForceCloseTab;
-        public event EventHandler<DyanamicTabLockControl> LoackingControls;
         public event EventHandler<DynamicTabCompareTabPageEventArgs> CompareTabPage;
         public int UniqueId { get; set; }
         public int DynamicTabIndex { get; set; }

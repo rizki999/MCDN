@@ -22,6 +22,7 @@ namespace MySqlClientDotNET.DesignControls.ConsoleSQL_NS {
             ICollection<string> icol = MySqlConfig.ListKeyword;
             autoComlete.Items.SetAutocompleteItems(icol);
             autoComlete.AppearInterval = 100;
+            this.IsEdited = false;
         }
 
         public override void InitializedOnDynamicTab() {
