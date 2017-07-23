@@ -69,9 +69,6 @@
             this.buttonCreate = new System.Windows.Forms.ToolStripButton();
             this.buttonAlter = new System.Windows.Forms.ToolStripButton();
             this.buttonDrop = new System.Windows.Forms.ToolStripButton();
-            this.toolStripPanLeft = new System.Windows.Forms.ToolStrip();
-            this.toolStripPanLeftClose = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabelDBExplorer = new System.Windows.Forms.ToolStripLabel();
             this.panRight = new System.Windows.Forms.Panel();
             this.textServerStatus = new FastColoredTextBoxNS.FastColoredTextBox();
             this.toolStripPanRight = new System.Windows.Forms.ToolStrip();
@@ -98,12 +95,14 @@
             this.buttonContextDropTB = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.buttonContextEditData = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripPanLeftClose = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelDBExplorer = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripPanLeft = new System.Windows.Forms.ToolStrip();
             this.panBottom.SuspendLayout();
             this.tabOut.SuspendLayout();
             this.toolStripPanBottom.SuspendLayout();
             this.panLeft.SuspendLayout();
             this.toolStripPanBottomLeft.SuspendLayout();
-            this.toolStripPanLeft.SuspendLayout();
             this.panRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textServerStatus)).BeginInit();
             this.toolStripPanRight.SuspendLayout();
@@ -111,6 +110,7 @@
             this.toolStripLeft.SuspendLayout();
             this.toolStripRight.SuspendLayout();
             this.databaseExplorerContextMenu.SuspendLayout();
+            this.toolStripPanLeft.SuspendLayout();
             this.SuspendLayout();
             // 
             // panBottom
@@ -476,36 +476,6 @@
             this.buttonDrop.Text = "toolStripButton3";
             this.buttonDrop.Click += new System.EventHandler(this.buttonDrop_Click);
             // 
-            // toolStripPanLeft
-            // 
-            this.toolStripPanLeft.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStripPanLeft.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripPanLeftClose,
-            this.toolStripLabelDBExplorer});
-            this.toolStripPanLeft.Location = new System.Drawing.Point(0, 0);
-            this.toolStripPanLeft.Name = "toolStripPanLeft";
-            this.toolStripPanLeft.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.toolStripPanLeft.Size = new System.Drawing.Size(200, 25);
-            this.toolStripPanLeft.TabIndex = 0;
-            this.toolStripPanLeft.Text = "toolStrip1";
-            // 
-            // toolStripPanLeftClose
-            // 
-            this.toolStripPanLeftClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripPanLeftClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripPanLeftClose.Image")));
-            this.toolStripPanLeftClose.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripPanLeftClose.Name = "toolStripPanLeftClose";
-            this.toolStripPanLeftClose.Size = new System.Drawing.Size(23, 22);
-            this.toolStripPanLeftClose.Text = "Close";
-            this.toolStripPanLeftClose.Click += new System.EventHandler(this.toolStripPanLeftClose_Click);
-            // 
-            // toolStripLabelDBExplorer
-            // 
-            this.toolStripLabelDBExplorer.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabelDBExplorer.Name = "toolStripLabelDBExplorer";
-            this.toolStripLabelDBExplorer.Size = new System.Drawing.Size(100, 22);
-            this.toolStripLabelDBExplorer.Text = "Database Explorer";
-            // 
             // panRight
             // 
             this.panRight.BackColor = System.Drawing.SystemColors.Control;
@@ -777,6 +747,36 @@
             this.buttonContextEditData.Text = "Edit Data On Table (Insert/Update/Delete)";
             this.buttonContextEditData.Click += new System.EventHandler(this.buttonContexEditData_Click);
             // 
+            // toolStripPanLeftClose
+            // 
+            this.toolStripPanLeftClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripPanLeftClose.Image = ((System.Drawing.Image)(resources.GetObject("toolStripPanLeftClose.Image")));
+            this.toolStripPanLeftClose.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripPanLeftClose.Name = "toolStripPanLeftClose";
+            this.toolStripPanLeftClose.Size = new System.Drawing.Size(23, 22);
+            this.toolStripPanLeftClose.Text = "Close";
+            this.toolStripPanLeftClose.Click += new System.EventHandler(this.toolStripPanLeftClose_Click);
+            // 
+            // toolStripLabelDBExplorer
+            // 
+            this.toolStripLabelDBExplorer.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabelDBExplorer.Name = "toolStripLabelDBExplorer";
+            this.toolStripLabelDBExplorer.Size = new System.Drawing.Size(100, 22);
+            this.toolStripLabelDBExplorer.Text = "Database Explorer";
+            // 
+            // toolStripPanLeft
+            // 
+            this.toolStripPanLeft.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripPanLeft.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripPanLeftClose,
+            this.toolStripLabelDBExplorer});
+            this.toolStripPanLeft.Location = new System.Drawing.Point(0, 0);
+            this.toolStripPanLeft.Name = "toolStripPanLeft";
+            this.toolStripPanLeft.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolStripPanLeft.Size = new System.Drawing.Size(200, 25);
+            this.toolStripPanLeft.TabIndex = 0;
+            this.toolStripPanLeft.Text = "toolStrip1";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -798,8 +798,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MySql Client .NET";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.MinimumSizeChanged += new System.EventHandler(this.MainWindow_MinimumSizeChanged);
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panBottom.ResumeLayout(false);
             this.panBottom.PerformLayout();
@@ -810,8 +808,6 @@
             this.panLeft.PerformLayout();
             this.toolStripPanBottomLeft.ResumeLayout(false);
             this.toolStripPanBottomLeft.PerformLayout();
-            this.toolStripPanLeft.ResumeLayout(false);
-            this.toolStripPanLeft.PerformLayout();
             this.panRight.ResumeLayout(false);
             this.panRight.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textServerStatus)).EndInit();
@@ -824,6 +820,8 @@
             this.toolStripRight.ResumeLayout(false);
             this.toolStripRight.PerformLayout();
             this.databaseExplorerContextMenu.ResumeLayout(false);
+            this.toolStripPanLeft.ResumeLayout(false);
+            this.toolStripPanLeft.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -843,9 +841,6 @@
         private System.Windows.Forms.ToolStrip toolStripLeft;
         private System.Windows.Forms.ToolStrip toolStripRight;
         private System.Windows.Forms.ToolStripButton toolStripButtonDBExplorer;
-        private System.Windows.Forms.ToolStrip toolStripPanLeft;
-        private System.Windows.Forms.ToolStripButton toolStripPanLeftClose;
-        private System.Windows.Forms.ToolStripLabel toolStripLabelDBExplorer;
         private System.Windows.Forms.ToolStrip toolStripPanRight;
         private System.Windows.Forms.ToolStripButton toolStripPanRightClose;
         private System.Windows.Forms.ToolStripLabel toolStripLabelServerIdentity;
@@ -904,6 +899,9 @@
         private System.Windows.Forms.MenuItem subMainMenuOpenConsole;
         private System.Windows.Forms.MenuItem subMainMenuUserAccount;
         private System.Windows.Forms.ToolStripMenuItem buttonContextCreateTB;
+        private System.Windows.Forms.ToolStrip toolStripPanLeft;
+        private System.Windows.Forms.ToolStripButton toolStripPanLeftClose;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelDBExplorer;
 
 
     }

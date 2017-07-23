@@ -30,8 +30,6 @@ namespace MySqlClientDotNET.DesignControls.ResultGridNS {
 
             IndexPrimaryKey = new List<int>();
 
-            isEditedCell = false;
-
             DatabaseAndTableName = "";
 
             sqlText = "";
@@ -739,15 +737,13 @@ namespace MySqlClientDotNET.DesignControls.ResultGridNS {
         private void gridTable_CellValueChanged(object sender, DataGridViewCellEventArgs e) {
             cellEdited(e.RowIndex, e.ColumnIndex);
         }
-
-        private bool isEditedCell;
+        
         private List<string> lsValPri = new List<string>();
         private void beginCellEdit(int rowIndex) {
             if (outGrid == OutGrid.ExecutedFromSQLBuilder) {
                 lsValPri.Clear();
                 for (int i = 0; i < IndexPrimaryKey.Count; ++i)
                     lsValPri.Add(gridTable[IndexPrimaryKey[i], rowIndex].Value.ToString());
-                isEditedCell = false;
             }
         }
 

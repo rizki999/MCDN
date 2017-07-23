@@ -1401,13 +1401,11 @@ ASC;";
             }
         }
 
-        private bool isEditedCol = false;
         private void buttonEditColumn_Click(object sender, EventArgs e) {
             if (gridTable.SelectedRows.Count <= 0) {
                 return;
             }
             if (buttonEditColumn.Text.Equals(BTEditCol)) {
-                isEditedCol = true;
                 buttonEditColumn.Text = BTSaveEdit;
                 buttonRemoveColumn.Text = BTCancelEdit;
 
@@ -1451,7 +1449,6 @@ ASC;";
                 if (!checkInput(false)) {
                     return;
                 }
-                isEditedCol = false;
                 buttonEditColumn.Text = BTEditCol;
                 buttonRemoveColumn.Text = BTDelColumn;
 
@@ -1575,9 +1572,10 @@ ASC;";
                     if (index == 0)
                         return;
                     this.IsEdited = true;
-                    setTempTableVal(gridTable[0, index].Value.ToString(),
-                                    gridTable[0, index].Value.ToString(),
-                                    "EP");
+                    if (this.Mode == TableBuilderMode.AlterTable) //setTempTableVal untuk mode alter doang
+                        setTempTableVal(gridTable[0, index].Value.ToString(),
+                                        gridTable[0, index].Value.ToString(),
+                                        "EP");
                     DataGridViewRowCollection rows = gridTable.Rows;
 
                     DataGridViewRow prevRow = rows[index - 1];
@@ -1600,9 +1598,10 @@ ASC;";
                     if (index == (rowCount - 1))
                         return;
                     this.IsEdited = true;
-                    setTempTableVal(gridTable[0, index].Value.ToString(),
-                                    gridTable[0, index].Value.ToString(),
-                                    "EP");
+                    if (this.Mode == TableBuilderMode.AlterTable) //setTempTableVal untuk mode alter doang
+                        setTempTableVal(gridTable[0, index].Value.ToString(),
+                                        gridTable[0, index].Value.ToString(),
+                                        "EP");
                     DataGridViewRowCollection rows = gridTable.Rows;
                     DataGridViewRow nextRow = rows[index + 1];
                     rows.Remove(nextRow);

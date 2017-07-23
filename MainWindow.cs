@@ -40,6 +40,7 @@ namespace MySqlClientDotNET {
         }
 
         #region language
+        //set for langauage aplication
         private void setLanguage() {
             mainMenuFiles.Text = LanguageApp.langMainMenu["MMFiles"];
             mainMenuView.Text = LanguageApp.langMainMenu["MMView"];
@@ -128,6 +129,7 @@ namespace MySqlClientDotNET {
         private string MSGErrTryCloseConn;
         #endregion
 
+        //set value window setting to ini file
         private void setWindowToIniFile() {
             int iw_width, iw_hight, ilocate_x, ilocate_y;
             iw_hight = 0;
@@ -163,6 +165,7 @@ namespace MySqlClientDotNET {
 
         }
 
+        //seting up window from ini file
         private void setWindowToForm() {
             int iw_width, iw_hight, ilocate_x, ilocate_y, w_fullscreen;
             iw_hight = 0;
@@ -203,23 +206,16 @@ namespace MySqlClientDotNET {
         }
 
         private void MainWindow_Load(object sender, EventArgs e) {
-            setWindowToForm();
+            setWindowToForm();// execute method seting up window from ini file
         }
 
-        private void MainWindow_MinimumSizeChanged(object sender, EventArgs e) {
-            //setWindowToForm();
-        }
-
+        //when widow are closing, need set of the main window
         protected override void OnClosing(CancelEventArgs e) {
             base.OnClosing(e);
             setWindowToIniFile();
         }
 
         private string appName = "MySql Client .NET";
-
-        /*private IniData iniData;
-        private FileIniDataParser fileIni;
-        private System.IO.FileStream hFileIni;*/
 
         private ImageList imageTree;
         
@@ -242,11 +238,6 @@ namespace MySqlClientDotNET {
         private TreeNode prevTreeNode;
         private MySqlScript scriptSQL;
         private MySqlCommand cmmd;
-
-        private bool isOpenConnection;
-        private bool ignoreBrokenConnection;
-
-        private BackgroundWorker checkConnection;
         private WaitingConnection waitingForm;
         private bool efectToTree;
         
@@ -297,9 +288,8 @@ WHERE
                 waitingForm.Dispose();
         }
 
-        Stopwatch sw;
+        //open connection and initialize user accunt
         public void OpenConnection(object sender, EventArgs e) {
-            isOpenConnection = true;
             efectToTree = false;
             enableMenu(true);
             Dictionary<string, string> serverStat = new Dictionary<string, string>();
@@ -368,8 +358,6 @@ WHERE
             loadTreeExplorer.ProgressChanged += new ProgressChangedEventHandler(loadTreeExplorer_ProgressChanged);
             toolStripLabelLoadDB.Visible = true;
             treeExplorer.Enabled = false;
-            sw = new Stopwatch();
-            sw.Start();
             waitingForm.Text = MSGWaitAllDatabase;
             loadTreeExplorer.RunWorkerAsync();
         }
@@ -386,14 +374,8 @@ WHERE
         }
 
         private void InitializeExternalComponent() {
-
-            //this.Activated += new System.EventHandler(this.MainWindow_Activated);
-
             limitPage = 25;
             uniqueIdTextSql = 0;
-
-            isOpenConnection = false;
-            ignoreBrokenConnection = false;
 
             enableMenu(false);
 
@@ -405,7 +387,6 @@ WHERE
 
             dynamicTabResult = new DesignControls.DynamicTabNS.DynamicTabs();
             dynamicTabResult.Name = "dynamicTabResult";
-            dynamicTabResult.ClosingTab += new EventHandler<DesignControls.DynamicTabNS.DynamicTabCloseTabEventArgs>(dynamicTabResult_ClosingTab);
             dynamicTabResult.Dock = DockStyle.Fill;
             this.tabOut.TabPages[1].Controls.Add(dynamicTabResult);
 
@@ -453,6 +434,7 @@ WHERE
             dynamicTab.AddTabPage(startPage);
         }
 
+        //for connetion mode or disconnect mode
         private void enableMenu(bool itIs) {
             if (itIs) {
                 subMainMenuSetting.Enabled = true;
@@ -463,6 +445,7 @@ WHERE
                 subMainMenuUserAccount.Enabled = true;
                 subMainMenuOpenConsole.Enabled = true;
                 mainMenuTools.Enabled = true;
+                subMainMenuCloseConn.Enabled = true;
             } else {
                 subMainMenuSetting.Enabled = false;
                 subMainMenuNewSql.Enabled = false;
@@ -474,13 +457,14 @@ WHERE
                 subMainMenuSaveSQL.Enabled = false;
                 subMainMenuSaveAsSQL.Enabled = false;
                 mainMenuTools.Enabled = false;
+                subMainMenuCloseConn.Enabled = false;
             }
         }
 
         #endregion
 
         #region dynamicTab
-
+        //event when tab are closed
         private void dynamicTab_Close(object sender, DesignControls.DynamicTabNS.DynamicTabCloseTabEventArgs e) {
             System.Diagnostics.Debug.WriteLine("Index : {0}\nUnique ID : {1}",
                                                e.IndexTab,
@@ -490,10 +474,6 @@ WHERE
                 subMainMenuSaveAsSQL.Enabled = false;
                 dynamicTabResult.CloseTabByForeginId(e.UniqueId);
             }
-        }
-
-        void dynamicTabResult_ClosingTab(object sender, DesignControls.DynamicTabNS.DynamicTabCloseTabEventArgs e) {
-
         }
 
         void dynamicTab_SelectedTab(object sender, DesignControls.DynamicTabNS.DyanamicTabSelectedTabEventArgs e) {
@@ -572,9 +552,7 @@ WHERE
         }
 
         void loadTreeExplorer_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-            sw.Stop();
             waitingForm.Dispose();
-            System.Diagnostics.Debug.WriteLine("In sec:mili_sec : {0:00}:{1:00}", sw.Elapsed.Seconds, sw.Elapsed.Milliseconds / 5);
             if (e.Error != null)
                 ErrorMessage(MSGErrLoadDbTree, e.Error.Message);
             else {
@@ -674,30 +652,30 @@ FROM
 WHERE 
     TABLE_SCHEMA='" + r.TableDatabaseName + @"' 
 AND ";
-                        listArgs.Add(true); //konfir jika tabel baru (create)
-                        listArgs.Add(node); //masukan node database
+                        listArgs.Add(true); //flag for new table (create)
+                        listArgs.Add(node); //add database node
 
-                        //buat node tabel baru
+                        //for new table node
                         object cNode = null;
 
                         try {
-                            //cari informasi table kolom di information_schema
+                            //find information column table from information_schema
                             if (r.TableNameNew.GetType() == typeof(string)) {
                                 query += "TABLE_NAME='" + (string)r.TableNameNew + "';";
                                 TreeNode[] tmpTree = getDatabaseInfoToTreeNode(query, 2).ToArray();
                                 TreeNode tmpTabelTree = new TreeNode((string)r.TableNameNew, 1, 1); // buat tabel baru
-                                tmpTabelTree.Nodes.AddRange(tmpTree); //menambahkan node kolom ke node table
-                                cNode = tmpTabelTree; // untuk masukan ke arg result
+                                tmpTabelTree.Nodes.AddRange(tmpTree); //add column node to table node
+                                cNode = tmpTabelTree; // inset to arg result
                             } else if (r.TableNameNew.GetType() == typeof(List<string>)) {
-                                List<string> tmp = (List<string>)r.TableNameNew; // mendapatkan nama tabel dari lis arumen
-                                List<TreeNode> tmp_cNode = new List<TreeNode>(); //menampung 
+                                List<string> tmp = (List<string>)r.TableNameNew; // got tabel name from list arument
+                                List<TreeNode> tmp_cNode = new List<TreeNode>(); //colect
 
                                 for (int j = 0; j < tmp.Count; ++j) {
                                     string tmQuery = query + "TABLE_NAME='" + tmp[j] + "';";
                                     TreeNode[] tmpColTree = getDatabaseInfoToTreeNode(tmQuery, 2).ToArray();
 
-                                    TreeNode tmpTableTree = new TreeNode(tmp[j], 1, 1); // Membuat Node Tabel
-                                    tmpTableTree.Nodes.AddRange(tmpColTree); // Menambahkan Node kolom Ke Node Tabel
+                                    TreeNode tmpTableTree = new TreeNode(tmp[j], 1, 1); // creat new table
+                                    tmpTableTree.Nodes.AddRange(tmpColTree); // add column node to table node
 
                                     tmp_cNode.Add(tmpTableTree);
                                 }
@@ -707,11 +685,10 @@ AND ";
                             excep = ex;
                         }
 
-                        //menambahkan node table ke parameter
+                        //add table node to parameter
                         listArgs.Add(cNode);
                     } else {
-                        //node table yang sudah ada
-
+                        //exsited table node
                         string query =
 @"SELECT 
     COLUMN_NAME,
@@ -723,8 +700,8 @@ WHERE
 AND 
     TABLE_NAME='" + r.TableNameNew + "';";
 
-                        listArgs.Add(false); //konfir jika tabel sudah ada (alter)
-                        TreeNode cNode = null; //untuk node tabel yang lama
+                        listArgs.Add(false); //flag for table exist (alter)
+                        TreeNode cNode = null; //for pervius tabel node
 
                         //untuk node kolom
                         List<TreeNode> cNode1 = new List<TreeNode>();
@@ -741,9 +718,9 @@ AND
                                 break;
                             }
                         }
-                        listArgs.Add(node); //node database
-                        listArgs.Add(cNode); //masukan node table lama ke argumen
-                        listArgs.Add(cNode1.ToArray()); //masukan lis node kolom lama ke argumen
+                        listArgs.Add(node); //database node
+                        listArgs.Add(cNode); //add old table node to argument
+                        listArgs.Add(cNode1.ToArray()); //add old columnt node to argument
                     }
                     break;
                 }
@@ -771,7 +748,7 @@ AND
             bool newTable = (bool)args[2];
             if (newTable) {
                 try {
-                    //tabel baru
+                    //New table
                     TreeNode dbNode = (TreeNode)args[3];
                     if (args[4].GetType() == typeof(TreeNode)) {
                         TreeNode tbNode = (TreeNode)args[4];
@@ -784,15 +761,15 @@ AND
                     Log.WriteL("Error :  " + ex.Message);
                 }
             } else {
-                //tabel sudah ada
+                //existed table
                 try {
                     TreeNode dbNode = (TreeNode)args[3];
                     TreeNode tbNode = (TreeNode)args[4];
                     TreeNode[] colNode = (TreeNode[])args[5];
                     TreeNode newNodeTabel = new TreeNode((string)r.TableNameNew, 1, 1);
                     newNodeTabel.Nodes.AddRange(colNode);
-                    dbNode.Nodes.Remove(tbNode); //hapus node yang lama
-                    insertNode(dbNode.Nodes, newNodeTabel); //masukan node baru
+                    dbNode.Nodes.Remove(tbNode); //delete old tbale node 
+                    insertNode(dbNode.Nodes, newNodeTabel); //insert new table node
                 } catch (Exception ex) {
                     Log.WriteL("Error : " + ex.Message);
                 }
@@ -1625,22 +1602,8 @@ AND
 
         #endregion
 
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e) {
-            //return;
-            for (int i = 0; i < dynamicTab.DynamicTabPage.Count; ++i) {
-                if (dynamicTab.DynamicTabPage[i].IsEdited) {
-                    DialogResult dResult = Msg.WarrnQ(MSGWarnDiscardAllContent);
-                    if (dResult == System.Windows.Forms.DialogResult.No)
-                        e.Cancel = true;
-                    else
-                        break;
-                }
-            }
-        }
-
         private void closeConnectionMode() {
             this.Text = appName;
-            isOpenConnection = false;
             efectToTree = false;
             dynamicTab.CloseAllTab();
             if (treeExplorer.Nodes != null)
@@ -1665,7 +1628,6 @@ AND
             startPage.CanClose = false;
             dynamicTab.AddTabPage(startPage);
             sqlMessage.ClearMessage();
-            ignoreBrokenConnection = false;
         }
 
         protected void ErrorMessage(string msgAction, string msgErr) {
@@ -1674,48 +1636,6 @@ AND
             exec.Error = MessageKeyword.BuildErrorMessage(msgErr);
             messageFromOtherObject(this, exec);
         }
-
-        #region maintan
-        private void MainWindow_Activated(object sender, EventArgs e) {
-            return;
-            if (isOpenConnection) {
-                if (ignoreBrokenConnection)
-                    return;
-                if (checkConnection != null) {
-                    if (checkConnection.IsBusy)
-                        return;
-                    checkConnection.Dispose();
-                }
-
-                System.Diagnostics.Debug.WriteLine("Checking connection !");
-
-                checkConnection = new BackgroundWorker();
-                checkConnection.RunWorkerCompleted += new RunWorkerCompletedEventHandler(ceckConnection_RunWorkerCompleted);
-                checkConnection.DoWork += new DoWorkEventHandler(ceckConnection_DoWork);
-                checkConnection.RunWorkerAsync();
-            }
-        }
-        void ceckConnection_DoWork(object sender, DoWorkEventArgs e) {
-            try {
-                if (!AppConnection.Connection.Ping()) {
-                    throw new Exception("MySQL Server Connection not respond");
-                }
-            } catch (MySqlException ex) {
-                throw new Exception(ex.Message);
-            }
-        }
-        void ceckConnection_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e) {
-            if (e.Error != null) {
-                ErrorMessage("ceckConnection", e.Error.Message);
-                showMessage();
-                ignoreBrokenConnection = true;
-                DialogResult dResult = Msg.WarrnQ("Keep application in conection mode ?");
-                if (dResult == System.Windows.Forms.DialogResult.Yes)
-                    return;
-                closeConnectionMode();
-            }
-        }
-        #endregion
 
         private void subMainMenuAbout_Click(object sender, EventArgs e) {
             DesignControls.FormAbout f = new FormAbout();
